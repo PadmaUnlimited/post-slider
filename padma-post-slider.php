@@ -4,7 +4,7 @@
 Plugin Name:	Padma Post Slider
 Plugin URI:		https://www.padmaunlimited/plugins/post-slider
 Description:  	Padma slider is a WordPress plugin that turns your posts into a post slider in different styles. Post slider is touch friendly and responsive for all devices.
-Version:		0.0.2
+Version:		0.0.3
 Author: 		Padma Unlimited Team
 Author URI: 	https://www.padmaunlimited.com/
 License:      	GPL2
@@ -77,7 +77,7 @@ function padma_post_slider_register_shortcode($atts, $content = null){
 		$psrndn = rand(1,1000);
 		// 	query posts
 
-		$args =	array ( 'post_type' => 'post',
+		$args =	array ( 'post_type' => $post_type,
 						'posts_per_page' => $number,
 						'orderby' => $order_by,
 						'order' => $order );
