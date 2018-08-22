@@ -221,7 +221,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 					$result.='</div>
 					<div class="pps_single_slider_item_reviews pps_single_slider_item_reviews-'.$psrndn.'">
 						<h3 class="pps_single_slider_item_post_title-'.$psrndn.'"><a href="'.esc_url(get_the_permalink()).'">'.esc_attr(get_the_title()).'</a></h3>
-						<div class="pps_single_slider_item_description-'.$psrndn.'">'.do_shortcode(get_the_content()).'
+						<div class="pps_single_slider_item_description pps_single_slider_item_description-'.$psrndn.'">'.do_shortcode(get_the_content()).'
 						</div>
 						<div class="pps_single_slider_admin_description pps_single_slider_admin_description-'.$psrndn.'">
 							<span><i class="fa fa-user"></i> <a href="'.get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ).'">'.get_the_author().'</a></span>
