@@ -219,11 +219,11 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 						
 						$result.='</div>';
 					$result.='</div>
-					<div class="pps_single_slider_item_reviews-'.$psrndn.'">
+					<div class="pps_single_slider_item_reviews pps_single_slider_item_reviews-'.$psrndn.'">
 						<h3 class="pps_single_slider_item_post_title-'.$psrndn.'"><a href="'.esc_url(get_the_permalink()).'">'.esc_attr(get_the_title()).'</a></h3>
-						<div class="pps_single_slider_item_description-'.$psrndn.'">'.wpautop($excerpt).'
+						<div class="pps_single_slider_item_description-'.$psrndn.'">'.do_shortcode(get_the_content()).'
 						</div>
-						<div class="pps_single_slider_admin_description-'.$psrndn.'">
+						<div class="pps_single_slider_admin_description pps_single_slider_admin_description-'.$psrndn.'">
 							<span><i class="fa fa-user"></i> <a href="'.get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ).'">'.get_the_author().'</a></span>
 						</div>
 					</div>
@@ -370,7 +370,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 						<li class="post_slider_'.$psrndn.'_style_post_author">
 						<i class="fa fa-user"></i>
 						<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ).'">'.get_the_author().'</a></li>
-					</ul>'.wpautop($excerpt).'
+					</ul>'.do_shortcode(get_the_content()).'
 				</div>';
 					
 			endwhile;
@@ -538,7 +538,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				<ul class="post_slider_'.$psrndn.'_style3_bars">
 					<li class="post_slider_'.$psrndn.'_style3_dates">'.get_the_date('Y-m-d').'</li>
 					<li class="post_slider_'.$psrndn.'_style3_autors"><a href="'.get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ).'">'.get_the_author().'</a></li>
-				</ul>'.wpautop($excerpt).'
+				</ul>'.do_shortcode(get_the_content()).'
 				<a href="'.esc_url(get_the_permalink()).'" class="post_slider_'.$psrndn.'_style3_p_readmores">more</a>
 			</div>';
 
