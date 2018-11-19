@@ -5,6 +5,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
     public $id 				= 'post-slider-block';    
     public $name 			= 'Post Slider';
     public $options_class 	= 'PadmaPostSliderBlockOptions';
+    public $categories 		= array('content','gallery');
     
 			
 	function setup_elements() {
