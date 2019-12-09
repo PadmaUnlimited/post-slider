@@ -9,7 +9,78 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
     
 			
 	function setup_elements() {
+		$this->register_block_element(array(
+			'id' => 'slide',
+			'name' => 'Slide',
+			'selector' => '.owl-item'
+		));
 
+		$this->register_block_element(array(
+			'id' => 'slide-p',
+			'name' => 'Slide text',
+			'selector' => '.owl-item p'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'slide-a',
+			'name' => 'Slide link',
+			'selector' => '.owl-item a'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'slide-h1',
+			'name' => 'Slide H1',
+			'selector' => '.owl-item h1'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'slide-h2',
+			'name' => 'Slide H2',
+			'selector' => '.owl-item h2'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'slide-h3',
+			'name' => 'Slide H3',
+			'selector' => '.owl-item h3'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'slide-h4',
+			'name' => 'Slide H4',
+			'selector' => '.owl-item h4'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'slide-h5',
+			'name' => 'Slide H5',
+			'selector' => '.owl-item h5'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'slide-ul',
+			'name' => 'Slide UL',
+			'selector' => '.owl-item ul'
+		));
+
+
+		$this->register_block_element(array(
+			'id' => 'slide-li',
+			'name' => 'Slide LI',
+			'selector' => '.owl-item li'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'dots',
+			'name' => 'Dots',
+			'selector' => '.owl-dots'
+		));
+
+		$this->register_block_element(array(
+			'id' => 'dots-item',
+			'name' => 'Dots Item',
+			'selector' => '.owl-dots .owl-dot'
+		));
 	}
 
 	public static function enqueue_action($block_id, $block) {
