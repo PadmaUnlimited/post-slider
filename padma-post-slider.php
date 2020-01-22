@@ -58,4 +58,13 @@ function register_post_slider_block() {
 		$icons
 	);
 
+	/**
+	 *
+	 * Check if there is the Padma Loader
+	 *
+	 */		
+	if ( version_compare(PADMA_VERSION, '1.2.0', '<=') ){			
+		include_once $class_file;
+	}
+
 }
