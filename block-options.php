@@ -15,6 +15,7 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 		$this->inputs = array(
 
 			'content-tab' => array(
+
 				'post-type' => array(
 					'type' => 'select',
 					'name' => 'post-type',
@@ -23,34 +24,6 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 					'callback' => 'reloadBlockOptions(block.id)',
 					'default' => 'post',
 					'tooltip' => '',
-				),
-
-				'content-to-show' => array(
-					'type' => 'select',
-					'name' => 'content-to-show',
-					'label' => 'Content to show',
-					'options' => array(
-						'normal' => 'Normal',						
-						'excerpts' => __('Show Excerpts','padma-post-slider'),
-						'none' => __('Do not show content','padma-post-slider')
-					),
-					'default' => 'normal',
-					'tooltip' => '',
-				),
-
-				'slider-style' => array(
-					'type' => 'select',
-					'name' => 'slider-style',
-					'label' => 'Style',
-					'default' => 'style1',
-					'options' => array(
-						'style1' => 'Style 1',
-						'style2' => 'Style 2',
-						'style3' => 'Style 3',
-						'style4' => 'Style 4',
-						'style5' => 'Style 5',
-						'style6' => 'Style 6',
-					)
 				),
 
 				'categories' => array(
@@ -89,6 +62,136 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 					)
 				),
 
+				'number-of-posts' => array(
+					'type' => 'integer',
+					'default' => 6,
+					'name' => 'number-of-posts',
+					'label' => 'Total Items to show',
+					'tooltip' => '',				
+				),
+
+				'slider-style' => array(
+					'type' => 'select',
+					'name' => 'slider-style',
+					'label' => 'Style',
+					'default' => 'style1',
+					'options' => array(
+						'style1' => 'Style 1',
+						'style2' => 'Style 2',
+						'style3' => 'Style 3',
+						'style4' => 'Style 4',
+						'style5' => 'Style 5',
+						'style6' => 'Style 6',
+					),
+					'toggle'    => array(
+						'style1' => array(
+							'show' => array(
+								'#input-content-to-show',
+								'#input-custom-length',
+								'#input-custom-length-number',
+							),
+							'hide' => array(
+								'#input-read-more-label'
+							)
+						),
+						'style2' => array(
+							'show' => array(
+								'#input-content-to-show',
+								'#input-custom-length',
+								'#input-custom-length-number',
+							),
+							'hide' => array(
+								'#input-read-more-label'
+							)
+						),
+						'style3' => array(
+							'show' => array(
+								'#input-content-to-show',
+								'#input-custom-length',
+								'#input-custom-length-number',
+								'#input-read-more-label'
+							),
+							'hide' => array(
+							)
+						),
+						'style4' => array(
+							'show' => array(
+								'#input-content-to-show',
+								'#input-custom-length',
+								'#input-custom-length-number',
+							),
+							'hide' => array(
+								'#input-read-more-label'
+							)
+						),
+						'style5' => array(
+							'show' => array(
+								'#input-content-to-show',
+								'#input-custom-length',
+								'#input-custom-length-number',
+								'#input-read-more-label'
+							),
+							'hide' => array(
+							)
+						),
+						'style6' => array(
+							'show' => array(
+							),
+							'hide' => array(
+								'#input-content-to-show',
+								'#input-custom-length',
+								'#input-custom-length-number',
+								'#input-read-more-label'
+							)
+						),
+					)
+				),
+
+				'content-to-show' => array(
+					'type' => 'select',
+					'name' => 'content-to-show',
+					'label' => 'Content to show',
+					'options' => array(
+						'normal' => 'Normal',						
+						'excerpts' => __('Show Excerpts','padma-post-slider'),
+						'none' => __('Do not show content','padma-post-slider')
+					),
+					'default' => 'normal',
+					'tooltip' => '',
+				),
+
+				'custom-length' => array(
+					'type' => 'select',
+					'name' => 'custom-length',
+					'label' => 'Custom length',
+					'options' => array(
+						'no' => 'No',
+						'yes' => 'Yes',
+					),
+					'default' => 'no',
+					'tooltip' => '',
+					'toggle'    => array(
+						'yes' => array(
+							'show' => array(
+								'#input-custom-length-number'
+							)
+						),
+						'no' => array(
+							'hide' => array(
+								'#input-custom-length-number'
+							)
+						),
+					)
+				),
+
+				'custom-length-number' => array(
+					'name' => 'custom-length-number',
+					'type' => 'integer',
+					'default' => 15,
+					'label' => 'Words to show',
+					'tooltip' => '',
+				),				
+
 				'auto_play' => array(
 					'type' => 'select',
 					'name' => 'auto_play',
@@ -106,7 +209,7 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 					'name' => 'show_items',
 					'label' => 'Show items',
 					'tooltip' => '',				
-				),
+				),			
 
 				'show_pagination' => array(
 					'type' => 'select',		

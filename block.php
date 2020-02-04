@@ -6,6 +6,11 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
     public $name 			= 'Post Slider';
     public $options_class 	= 'PadmaPostSliderBlockOptions';
     public $categories 		= array('content','gallery');
+    private $authors;
+
+    function __construct(){
+    	$this->authors = PadmaQuery::get_authors();
+    }
         			
 	function setup_elements() {
 		$this->register_block_element(array(
@@ -86,6 +91,313 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			'name' => 'Dots Item',
 			'selector' => '.owl-dots .owl-dot'
 		));
+
+		/**
+		 *
+		 * Style 1
+		 *
+		 */
+			$this->register_block_element(array(
+				'id' => 'padma-post-slider-area-style1',
+				'name' => 'Style 1 Area',
+				'selector' => '.padma-post-slider-area-style1'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1',
+				'name' => 'Style 1 Carousel',
+				'selector' => '.carousel-style1'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item',
+				'name' => 'Style 1 Item',
+				'selector' => '.carousel-style1-item'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-image',
+				'name' => 'Style 1 Image',
+				'selector' => '.carousel-style1-item-image'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-category',
+				'name' => 'Style 1 Categories',
+				'selector' => '.carousel-style1-item-category'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-category-a',
+				'name' => 'Style 1 Single Categorie',
+				'selector' => '.carousel-style1-item-category a'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-reviews',
+				'name' => 'Style 1 Content container',
+				'selector' => '.carousel-style1-item-reviews'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-title',
+				'name' => 'Style 1 Title',
+				'selector' => '.carousel-style1-item-title'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-title-a',
+				'name' => 'Style 1 Title Link',
+				'selector' => '.carousel-style1-item-title a'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-description',
+				'name' => 'Style 1 Content',
+				'selector' => '.carousel-style1-item-description'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-author',
+				'name' => 'Style 1 Author',
+				'selector' => '.carousel-style1-item-author'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-author-a',
+				'name' => 'Style 1 Author Link',
+				'selector' => '.carousel-style1-item-author a'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style1-item-author-icon',
+				'name' => 'Style 1 Author Icon',
+				'selector' => '.carousel-style1-item-author i'
+			));
+
+		/**
+		 *
+		 * Style 2
+		 *
+		 */
+			$this->register_block_element(array(
+				'id' => 'padma-post-slider-area-style2',
+				'name' => 'Style 2 Area',
+				'selector' => '.padma-post-slider-area-style2'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style2',
+				'name' => 'Style 2 Carousel',
+				'selector' => '.carousel-style2'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style2-item',
+				'name' => 'Style 2 Item',
+				'selector' => '.carousel-style2-item'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style2-item-image',
+				'name' => 'Style 2 Image',
+				'selector' => '.carousel-style2-item-image'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style2-item-meta',
+				'name' => 'Style 2 Meta',
+				'selector' => '.carousel-style2-item-meta'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style2-item-meta-item',
+				'name' => 'Style 2 Meta Item',
+				'selector' => '.carousel-style2-item-meta li'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style2-item-date',
+				'name' => 'Style 2 Date',
+				'selector' => '.carousel-style2-item-date'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style2-item-author',
+				'name' => 'Style 2 Author',
+				'selector' => '.carousel-style2-item-author'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style2-item-description',
+				'name' => 'Style 2 Content',
+				'selector' => '.carousel-style2-item-description'
+			));
+
+		/**
+		 *
+		 * Style 3
+		 *
+		 */
+			$this->register_block_element(array(
+				'id' => 'padma-post-slider-area-style3',
+				'name' => 'Style 3 Area',
+				'selector' => '.padma-post-slider-area-style3'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3',
+				'name' => 'Style 3 Carousel',
+				'selector' => '.carousel-style3'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item',
+				'name' => 'Style 3 Item',
+				'selector' => '.carousel-style3-item'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-image-link',
+				'name' => 'Style 3 Image Link',
+				'selector' => '.carousel-style3-item-image a'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-image',
+				'name' => 'Style 3 Image',
+				'selector' => '.carousel-style3-item-image a img'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-title',
+				'name' => 'Style 3 Title',
+				'selector' => '.carousel-style3-item-title'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-title-a',
+				'name' => 'Style 3 Title Link',
+				'selector' => '.carousel-style3-item-title a'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-meta',
+				'name' => 'Style 3 Meta',
+				'selector' => '.carousel-style3-item-meta'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-meta-item',
+				'name' => 'Style 3 Meta Item',
+				'selector' => '.carousel-style3-item-meta li'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-date',
+				'name' => 'Style 3 Date',
+				'selector' => '.carousel-style3-item-date'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-author',
+				'name' => 'Style 3 Author',
+				'selector' => '.carousel-style3-item-author'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-button',
+				'name' => 'Style 3 Button',
+				'selector' => '.carousel-style3-item-button'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style3-item-description',
+				'name' => 'Style 3 Content',
+				'selector' => '.carousel-style3-item-description'
+			));
+		
+		/**
+		 *
+		 * Style 4
+		 *
+		 */
+			$this->register_block_element(array(
+				'id' => 'padma-post-slider-area-style4',
+				'name' => 'Style 4 Area',
+				'selector' => '.padma-post-slider-area-style4'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style4',
+				'name' => 'Style 4 Carousel',
+				'selector' => '.carousel-style4'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style4-item-description',
+				'name' => 'Style 4 Content',
+				'selector' => '.carousel-style4-item-description'
+			));
+		
+		/**
+		 *
+		 * Style 5
+		 *
+		 */
+			$this->register_block_element(array(
+				'id' => 'padma-post-slider-area-style5',
+				'name' => 'Style 5 Area',
+				'selector' => '.padma-post-slider-area-style5'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style5',
+				'name' => 'Style 5 Carousel',
+				'selector' => '.carousel-style5'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style5-item',
+				'name' => 'Style 5 Item',
+				'selector' => '.carousel-style5-item'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style5-item-image-link',
+				'name' => 'Style 5 Image Link',
+				'selector' => '.carousel-style5-item-image a'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style5-item-image',
+				'name' => 'Style 5 Image',
+				'selector' => '.carousel-style5-item-image a img'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style5-item-title',
+				'name' => 'Style 5 Title',
+				'selector' => '.carousel-style5-item-title'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style5-item-title-a',
+				'name' => 'Style 5 Title Link',
+				'selector' => '.carousel-style5-item-title a'
+			));			
+			$this->register_block_element(array(
+				'id' => 'carousel-style5-item-button',
+				'name' => 'Style 5 Button',
+				'selector' => '.carousel-style5-item-button'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style5-item-description',
+				'name' => 'Style 5 Content',
+				'selector' => '.carousel-style5-item-description'
+			));
+
+		/**
+		 *
+		 * Style 6
+		 *
+		 */
+			$this->register_block_element(array(
+				'id' => 'padma-post-slider-area-style6',
+				'name' => 'Style 6 Area',
+				'selector' => '.padma-post-slider-area-style6'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style6',
+				'name' => 'Style 6 Carousel',
+				'selector' => '.carousel-style6'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style6-item',
+				'name' => 'Style 6 Item',
+				'selector' => '.carousel-style6-item'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style6-item-image-link',
+				'name' => 'Style 6 Image Link',
+				'selector' => '.carousel-style6-item-image a'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style6-item-title',
+				'name' => 'Style 6 Title',
+				'selector' => '.carousel-style6-item-title'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style6-item-title-a',
+				'name' => 'Style 6 Title Link',
+				'selector' => '.carousel-style6-item-title a'
+			));
+			$this->register_block_element(array(
+				'id' => 'carousel-style6-item-description',
+				'name' => 'Style 6 Content',
+				'selector' => '.carousel-style6-item-description'
+			));
+				
 	}
 
 	public static function enqueue_action($block_id, $block) {
@@ -99,13 +411,11 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 
 	function content($block) {
 		
-		$post_type 			= ( !empty($block['settings']['post-type']) ) ? $block['settings']['post-type']: 'post';
-		
+		$post_type 			= ( !empty($block['settings']['post-type']) ) ? $block['settings']['post-type']: 'post';		
 		$slider_style 		= ( !empty($block['settings']['slider-style']) ) ? $block['settings']['slider-style']: 'style1';
 		$order_by 			= ( !empty($block['settings']['order-by']) ) ? $block['settings']['order-by']: 'date';
 		$order 				= ( !empty($block['settings']['order']) ) ? $block['settings']['order']: 'desc';
-		$categories 		= ( !empty($block['settings']['categories']) ) ? $block['settings']['categories']: array();
-		$read_more_label	= ( !empty($block['settings']['read-more-label']) ) ? $block['settings']['read-more-label']: 'More';
+		$categories 		= ( !empty($block['settings']['categories']) ) ? $block['settings']['categories']: array();	
 
 		$posts = PadmaQuery::get_posts($block);
 
@@ -118,37 +428,73 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			case 'style2':
 				echo $this->render_style2($block,$posts);
 				break;
+
+			case 'style3':
+				echo $this->render_style3($block,$posts);
+				break;
+			
+			case 'style4':
+				echo $this->render_style4($block,$posts);
+				break;
+
+			case 'style5':
+				echo $this->render_style5($block,$posts);
+				break;
+			
+			case 'style6':
+				echo $this->render_style6($block,$posts);
+				break;
 			
 			default:
-				# code...
+				echo $this->render_style1($block,$posts);
 				break;
 		}
 
 	}
 
-	private function render_style1($block,$posts){
+	private function prepare_content($block,$post){
+		
+		$content_to_show 		= ( !empty($block['settings']['content-to-show']) ) ? $block['settings']['content-to-show']: 'normal';		
+		$custom_length 			= ( !empty($block['settings']['custom-length']) ) ? $block['settings']['custom-length']: 'no';
+		$custom_length_number 	= ( !empty($block['settings']['custom-length-number']) ) ? $block['settings']['custom-length-number']: 15;
 
-		$content_to_show 	= ( !empty($block['settings']['content-to-show']) ) ? $block['settings']['content-to-show']: 'normal';
+		$content = '';
+		$show_content = true;
+		
+		if( $content_to_show == 'normal' ){
+			
+			$content = $post->post_content;
+
+		}elseif ( $content_to_show == 'excerpts' ) {
+
+			$content = $post->post_excerpt;
+
+			if( strlen($content) == 0 ){
+				$content = $post->post_content;
+			}
+
+		}elseif ( $content_to_show == 'none' ) {
+			return false;
+		}
+
+		if( $custom_length === 'yes' ){
+			$content = wp_trim_words( do_shortcode($content), $custom_length_number );
+		}else{
+			$content = do_shortcode($content);
+		}
+
+		return $content;
+	}
+
+	private function render_style1($block,$posts){
 		
 		$html = '';
 		$html .='<div class="padma-post-slider-area-style1 post_slider_'.$block['id'] .' padma-post-slider-area'.$block['id'].'">';
 		$html .='<div id="tppost-main-slider-'.$block['id'].'" class="carousel-style1 owl-carousel tppost-main-slider">';
 		foreach ($posts as $key => $post) {
 
-			$content = '';
-			$show_content = true;
-			if( $content_to_show == 'normal' ){					
-				$content = do_shortcode( $post->post_content );
+			$content = $this->prepare_content($block,$post);
 
-			}elseif ( $content_to_show == 'excerpts' ) {
-				$content = do_shortcode( $post->post_excerpt );
-				if( strlen($content) == 0 ){
-					$content = do_shortcode( $post->post_content );
-				}
-			}elseif ( $content_to_show == 'none' ) {
-				$show_content = false;
-			}
-			
 			$html .= '<div class="carousel-style1-item pps_single_slider_items-'.$block['id'].' pps_single_slider_items">';
 				
 
@@ -181,54 +527,32 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 					$html .= '<h3 class="carousel-style1-item-title pps_single_slider_item_post_title-'.$block['id'].'"><a href="'.esc_url(get_the_permalink($post->ID)).'">'.esc_attr(get_the_title($post->ID)).'</a></h3>';
 
 					// Content
-					if( $show_content ){
+					if( $content !== false ){
 						$html .= '<div class="carousel-style1-item-description pps_single_slider_item_description pps_single_slider_item_description-'.$block['id'].'">'.$content.'</div>';						
 					}
 
 					// Author
-					the_post(); // queue first post
-					debug([
-						$post,
-						the_author_meta('display_name',$post->post_author)
-					]);
-					$author_id = get_the_author_meta('ID');
-					$author = get_user_by('id', $author_id);
-					rewind_posts();				
-
+					$author = $this->authors[ $post->post_author ];
 					$html .= '<div class="carousel-style1-item-author pps_single_slider_admin_description pps_single_slider_admin_description-'.$block['id'].'">';
-					$html .= '<span><i class="fa fa-user"></i> <a href="'.get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ).'">'.$author->display_name.'</a></span></div>';
+					$html .= '<span><i class="fa fa-user"></i> <a href="'.get_author_posts_url( $post->post_author, get_the_author_meta( 'user_nicename' ) ).'">'.$author.'</a></span></div>';
 					
 
 			$html .= '</div></div>';
 
 		}
-		$result .='</div></div><div class="clearfix"></div>';
+		$html .='</div></div><div class="clearfix"></div>';
 	
 		return $html;
 	}
 
 	private function render_style2($block,$posts){
 
-		$content_to_show 	= ( !empty($block['settings']['content-to-show']) ) ? $block['settings']['content-to-show']: 'normal';
-		
 		$html = '';
 		$html .='<div class="padma-post-slider-area-style2 post_slider_'.$block['id'] .' padma-post-slider-area'.$block['id'].'">';
-		$html .='<div id="tppost-main-slider-'.$block['id'].'" class="carousel-style1 owl-carousel tppost-main-slider">';
+		$html .='<div id="tppost-main-slider-'.$block['id'].'" class="carousel-style2 owl-carousel tppost-main-slider">';
 		foreach ($posts as $key => $post) {
 
-			$content = '';
-			$show_content = true;
-			if( $content_to_show == 'normal' ){					
-				$content = do_shortcode( $post->post_content );
-
-			}elseif ( $content_to_show == 'excerpts' ) {
-				$content = do_shortcode( $post->post_excerpt );
-				if( strlen($content) == 0 ){
-					$content = do_shortcode( $post->post_content );
-				}
-			}elseif ( $content_to_show == 'none' ) {
-				$show_content = false;
-			}
+			$content = $this->prepare_content($block,$post);
 			
 			$html .= '<div class="post_slider_'.$block['id'].'_style_two carousel-style2-item ">';					  
 				
@@ -244,78 +568,184 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				}
 				$html .= '</div>';
 
-				$html .= '<h5 class="post_slider_'.$block['id'].'_style_title">
+				$html .= '<h5 class="post_slider_'.$block['id'].'_style_title carousel-style2-item-title">
 							<a href="'.esc_url(get_the_permalink( $post->ID )).'">'.esc_attr(get_the_title( $post->ID )).'</a>
 						</h5>';
 
 
-				the_post(); // queue first post
-				$author_id = get_the_author_meta('ID');
-				$author = get_user_by('id', $author_id);
-				rewind_posts();
-
-				debug(['author' => $author]);
-
-				$html .= '<ul class="post_slider_'.$block['id'].'_style_bar">
+				// Author
+				$author = $this->authors[ $post->post_author ];
+				$html .= '<ul class="post_slider_'.$block['id'].'_style_bar carousel-style2-item-meta">
 							<li class="post_slider_'.$block['id'].'_style_post_date">
-							<i class="fa fa-calendar"></i> '.get_the_date('Y-m-d').'</li>
+							<i class="fa fa-calendar"></i><span class="carousel-style2-item-date">'.get_the_date( 'Y-m-d', $post->ID ).'</span></li>
 							<li class="post_slider_'.$block['id'].'_style_post_author">
 							<i class="fa fa-user"></i>
-							<a href="'.get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ).'">'.$author->data->display_name.'</a></li>
+							<a class="carousel-style2-item-author" href="'.get_author_posts_url( $post->post_author, get_the_author_meta( 'user_nicename' ) ).'">'.$author.'</a></li>
 						</ul>';
-				if( $show_content ) {
-					$html .= $content;
+
+				if( $content !== false ) {					
+					$html .= '<div class="carousel-style2-item-description">'.$content.'</div>';
 				}
 				
-				$html .= '</div>';
-
-
-				/*
-
-				$html .= '<span><i class="fa fa-user"></i> <a href="'.get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ).'">'.$author->display_name.'</a></span></div>';
-					
-
-				// Categories
-				$html .='<div class="carousel-style1-item-category pps_single_slider_items_category-'.$block['id'].'">';
-				$cats = get_the_category( $post->ID );
-				foreach ( $cats as $cat ){
-					$html .='<a href="'.get_category_link($cat->cat_ID).'">'.$cat->name.'</a>';
-					
-				}							
-				$html .='</div>';
-				$html .='</div>';
-
-
-
-				// Content and more
-				$html .= '<div class="carousel-style1-item-reviews pps_single_slider_item_reviews pps_single_slider_item_reviews-'.$block['id'].'">';
-				
-					// Title
-					$html .= '<h3 class="carousel-style1-item-title pps_single_slider_item_post_title-'.$block['id'].'"><a href="'.esc_url(get_the_permalink($post->ID)).'">'.esc_attr(get_the_title($post->ID)).'</a></h3>';
-
-					// Content
-					if( $show_content ){
-						$html .= '<div class="carousel-style1-item-description pps_single_slider_item_description pps_single_slider_item_description-'.$block['id'].'">'.$content.'</div>';						
-					}
-
-					// Author
-					the_post(); // queue first post
-					$author_id = get_the_author_meta('ID');
-					$author = get_user_by('id', $author_id);					
-
-					$html .= '<div class="carousel-style1-item-author pps_single_slider_admin_description pps_single_slider_admin_description-'.$block['id'].'">';
-					$html .= '<span><i class="fa fa-user"></i> <a href="'.get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ).'">'.$author->display_name.'</a></span></div>';
-
-					*/
-					
+				$html .= '</div>';					
 		}
-		$result .='</div></div><div class="clearfix"></div>';
+		$html .='</div></div><div class="clearfix"></div>';
 	
 		return $html;
 	}
 
+	private function render_style3($block,$posts){
+				
+		$read_more_label = ( !empty($block['settings']['read-more-label']) ) ? $block['settings']['read-more-label']: 'More';
+		
+		$html = '';
+		$html .='<div class="padma-post-slider-area-style3 post_slider_'.$block['id'] .' padma-post-slider-area'.$block['id'].'">';
+		$html .='<div id="tppost-main-slider-'.$block['id'].'" class="carousel-style3 owl-carousel tppost-main-slider">';
 	
+		foreach ($posts as $key => $post) {
 
+			$content = $this->prepare_content($block,$post);
+
+			$html .= '<div class="post_slider_'.$block['id'].'_style3 carousel-style3-item ">';
+				
+				// Featured image
+				$html .= '<div class="post_slider_'.$block['id'].'_style3_img  carousel-style3-item-image">';
+				if ( has_post_thumbnail( $post->ID ) ) {
+					$html .= '<div class="tps-slider-thumb tps-slider-thumb-style3">';
+					$html .= '<a href="'.esc_url(get_the_permalink( $post->ID )).'">'.get_the_post_thumbnail( $post->ID, 'post-slider-thumb', array( 'class' => "img-responsive" ) ).'</a>';
+					$html .= '</div>';
+				}
+				$html .='</div>';
+
+				// Title
+				$html .='<h5 class="post_slider_'.$block['id'].'_style3_title"><a href="'.esc_url(get_the_permalink( $post->ID )).'">'.esc_attr(get_the_title( $post->ID )).'</a></h5>';
+
+				$author = $this->authors[ $post->post_author ];
+				$html .= '<ul class="post_slider_'.$block['id'].'_style3_bars carousel-style3-item-meta">
+						<li class="post_slider_'.$block['id'].'_style3_dates"><span class="carousel-style3-item-date">'.get_the_date('Y-m-d',  $post->ID ).'</span></li>
+						<li class="post_slider_'.$block['id'].'_style3_autors"><a class="carousel-style3-item-author" href="'.get_author_posts_url( $post->ID, get_the_author_meta( 'user_nicename' ) ).'">'.$author.'</a></li>
+					</ul>';
+
+				if( $content !== false ){
+					$html .= '<div class="carousel-style3-item-description">'.$content.'</div>';
+
+				}
+
+				$html .= '<a href="'.esc_url(get_the_permalink()).'" class="post_slider_'.$block['id'].'_style3_p_readmores button carousel-style3-item-button">'.$read_more_label.'</a>';
+
+				$html .= '</div>';
+				
+		}
+		$html .='</div></div><div class="clearfix"></div>';
+	
+		return $html;
+	}
+
+	private function render_style4($block,$posts){
+
+		$html = '';
+		$html .='<div class="padma-post-slider-area-style4 post_slider_'.$block['id'] .' padma-post-slider-area'.$block['id'].'">';
+		$html .='<div id="tppost-main-slider-'.$block['id'].'" class="carousel-style4 owl-carousel tppost-main-slider">';
+	
+		foreach ($posts as $key => $post) {
+
+			$content = $this->prepare_content($block,$post);
+
+			$clases = 'presentacion';
+			$cats = get_the_category( $post->ID );
+			foreach ( $cats as $cat ){
+				$clases .= ' ' . $cat->name;
+			}
+
+			if( $content !== false )
+				$html .= '<div class="carousel-style4-item-description '.$clases.'">'.$content.'</div>';
+
+				
+		}
+		$html .='</div></div><div class="clearfix"></div>';
+	
+		return $html;
+	}
+
+	private function render_style5($block,$posts){
+
+		$read_more_label = ( !empty($block['settings']['read-more-label']) ) ? $block['settings']['read-more-label']: 'More';		
+
+		$html = '';
+		$html .='<div class="padma-post-slider-area-style5 post_slider_'.$block['id'] .' padma-post-slider-area'.$block['id'].'">';
+		$html .='<div id="tppost-main-slider-'.$block['id'].'" class="carousel-style5 owl-carousel tppost-main-slider">';
+	
+		foreach ($posts as $key => $post) {
+
+			$content = $this->prepare_content($block,$post);
+
+			$html .= '<div class="post_slider_'.$block['id'].'_style5 carousel-style5-item ">';
+				
+				// Featured image
+				$html .= '<div class="post_slider_'.$block['id'].'_style5_img  carousel-style5-item-image">';
+				if ( has_post_thumbnail( $post->ID ) ) {
+
+					$postIMG = get_the_post_thumbnail_url( $post->ID );
+
+					$html .= '<div class="tps-slider-thumb tps-slider-thumb-style5">';
+					$html .= '<a href="'.esc_url(get_the_permalink( $post->ID )).'" style="background-image:url('.$postIMG.')"></a>';
+					$html .= '</div>';
+				}
+				$html .='</div>';
+
+				// Title
+				$html .='<h5 class="post_slider_'.$block['id'].'_style5_title carousel-style5-item-title"><a href="'.esc_url(get_the_permalink( $post->ID )).'">'.esc_attr(get_the_title( $post->ID )).'</a></h5>';
+				
+				
+				if( $content !== false ){
+					$html .= '<div class="tps-slider-post-content_style5 carousel-style5-item-description">'.$content.'</div>';
+				}
+
+				// Button
+				$html .= '<div class="tps-slider-post-link_style5">';
+				$html .= '<a href="'.esc_url(get_the_permalink()).'" class="post_slider_'.$block['id'].'_style5_p_readmores button carousel-style5-item-button">'.$read_more_label.'</a>';
+				$html .= '</div>';
+
+			$html .= '</div>';
+				
+		}
+		$html .='</div></div><div class="clearfix"></div>';
+	
+		return $html;
+	}
+
+	private function render_style6($block,$posts){
+				
+		$html = '';
+		$html .='<div class="padma-post-slider-area-style6 post_slider_'.$block['id'] .' padma-post-slider-area'.$block['id'].'">';
+		$html .='<div id="tppost-main-slider-'.$block['id'].'" class="carousel-style6 owl-carousel tppost-main-slider">';
+	
+		foreach ($posts as $key => $post) {
+
+			$html .= '<div class="post_slider_'.$block['id'].'_style6 carousel-style6-item ">';
+				
+				// Featured image
+				$html .= '<div class="post_slider_'.$block['id'].'_style6_img  carousel-style6-item-image">';
+				if ( has_post_thumbnail( $post->ID ) ) {
+
+					$postIMG = get_the_post_thumbnail_url( $post->ID );
+
+					$html .= '<div class="tps-slider-thumb tps-slider-thumb-style6">';
+					$html .= '<a href="'.esc_url(get_the_permalink( $post->ID )).'" style="background-image:url('.$postIMG.'); background-size: cover;"></a>';
+					$html .= '</div>';
+				}
+				$html .='</div>';
+
+				// Title
+				$html .='<h5 class="post_slider_'.$block['id'].'_style6_title carousel-style6-item-title"><a href="'.esc_url(get_the_permalink( $post->ID )).'">'.esc_attr(get_the_title( $post->ID )).'</a></h5>';
+
+			$html .= '</div>';
+				
+		}
+		$html .='</div></div><div class="clearfix"></div>';
+	
+		return $html;
+	}
 
 	public static function dynamic_js($block_id, $block = false) {	
 
@@ -341,7 +771,6 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				});';
 	}
 
-
 	public static function dynamic_css($block_id, $block = false) {
 
 		if ( !$block )
@@ -357,7 +786,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 		switch ($style) {
 
 			case 'style1':
-					$css = '.pps_single_slider_items-'.$block['id'].' {
+					$css .= '.pps_single_slider_items-'.$block['id'].' {
 						border-bottom: medium none;
 						box-shadow: none;
 						margin: 0 10px;
@@ -475,7 +904,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				break;
 			
 			case 'style2':
-				$css = '.post_slider_'.$block['id'].'_style_two{
+				$css .= '.post_slider_'.$block['id'].'_style_two{
 						padding: 0 15px;
 					}
 					.post_slider_'.$block['id'].'_style_two .post_slider_'.$block['id'].'_style_img{
@@ -560,7 +989,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				break;
 
 			case 'style3':
-				$css = '.post_slider_'.$block['id'].'_style3{
+				$css .= '.post_slider_'.$block['id'].'_style3{
 						border: 1px solid #eee;
 						padding: 20px;
 						margin: 0 15px;
@@ -678,7 +1107,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				break;
 			
 			case 'style4':
-				$css = '.post_slider_'.$block['id'].'_style_four{
+				$css .= '.post_slider_'.$block['id'].'_style_four{
 						padding: 0 15px;
 					}
 					.post_slider_'.$block['id'].'_style_four .post_slider_'.$block['id'].'_style_img{
@@ -763,7 +1192,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				break;
 
 			case 'style5':
-				$css = '.post_slider_'.$block['id'].'_style5{
+				$css .= '.post_slider_'.$block['id'].'_style5{
 						border: 1px solid #eee;
 						padding: 0px;
 						margin: 0 15px;
@@ -786,7 +1215,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 					}
 					.post_slider_'.$block['id'].'_style5 .post_slider_'.$block['id'].'_style5_img > img{
 						width: 100%;
-						height:auto;
+						height:auto;						
 					}
 					.post_slider_'.$block['id'].'_style5 .post_slider_'.$block['id'].'_style5_title > a{
 						font-size: 20px;
@@ -882,7 +1311,8 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 						overflow: hidden;
 						border-bottom: 4px solid #48c7e7;
 						margin-bottom: 35px;
-
+						background-size: cover;
+						background-position: center;
 					}
 					.post_slider_'.$block['id'].'_style5_title{
 						text-align: center;
@@ -932,7 +1362,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				break;
 			
 			case 'style6':
-				$css = '.post_slider_'.$block['id'].'_style6{
+				$css .= '.post_slider_'.$block['id'].'_style6{
 						border: 0;
 						padding: 0px;
 						margin: auto;
@@ -1052,6 +1482,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 						background-repeat: no-repeat;
 						overflow: hidden;
 						margin-bottom: 35px;
+						background-position: center center;
 
 					}
 					.post_slider_'.$block['id'].'_style6_title{
@@ -1112,24 +1543,6 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 		
 
 		return $css;
-
-	}
-
-
-	function custom_excerpt_post($text, $limit = 20){
-		$excerpt = explode(' ', $text, $limit);
-
-		if (count($excerpt)>=$limit) {
-			
-			array_pop($excerpt);
-			$excerpt = implode(" ",$excerpt).'...';
-		
-		} else {
-			$excerpt = implode(" ",$excerpt);
-
-		}	
-		$excerpt = preg_replace('`[[^]]*]`','',$excerpt);
-		return $excerpt;
 	}
 	
 }
