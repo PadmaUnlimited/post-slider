@@ -91,7 +91,8 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 								'#input-custom-length-number',
 							),
 							'hide' => array(
-								'#input-read-more-label'
+								'#input-read-more-label',
+								'#input-focus-effect'
 							)
 						),
 						'style2' => array(
@@ -101,7 +102,8 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 								'#input-custom-length-number',
 							),
 							'hide' => array(
-								'#input-read-more-label'
+								'#input-read-more-label',
+								'#input-focus-effect'
 							)
 						),
 						'style3' => array(
@@ -109,7 +111,8 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 								'#input-content-to-show',
 								'#input-custom-length',
 								'#input-custom-length-number',
-								'#input-read-more-label'
+								'#input-read-more-label',
+								'#input-focus-effect'
 							),
 							'hide' => array(
 							)
@@ -121,6 +124,7 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 								'#input-custom-length-number',
 							),
 							'hide' => array(
+								'#input-focus-effect',
 								'#input-read-more-label'
 							)
 						),
@@ -129,19 +133,21 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 								'#input-content-to-show',
 								'#input-custom-length',
 								'#input-custom-length-number',
-								'#input-read-more-label'
+								'#input-read-more-label',
+								'#input-focus-effect'
 							),
 							'hide' => array(
 							)
 						),
 						'style6' => array(
 							'show' => array(
+								'#input-focus-effect'
 							),
 							'hide' => array(
 								'#input-content-to-show',
 								'#input-custom-length',
 								'#input-custom-length-number',
-								'#input-read-more-label'
+								'#input-read-more-label',
 							)
 						),
 					)
@@ -227,6 +233,35 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 					'name' => 'read-more-label',
 					'label' => 'Read more label',
 					'tooltip' => '',
+				),
+
+				'focus-effect' => array(
+					'type' => 'select',		
+					'name' => 'focus-effect',
+					'label' => 'Focus effect',
+					'options' => array(
+						'true' => 'Yes',
+						'false' => 'No',
+					),
+					'toggle'    => array(
+						'true' => array(
+							'show' => array(
+								'#input-focus-effect-color'
+							)
+						),
+						'false' => array(
+							'hide' => array(
+								'#input-focus-effect-color'
+							)
+						),
+					)
+				),
+
+				'focus-effect-color' => array(
+					'type' => 'colorpicker',		
+					'name' => 'focus-effect-color',
+					'label' => 'Focus color',
+					'default' => '#3398db',
 				),
 			),
 

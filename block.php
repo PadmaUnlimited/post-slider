@@ -110,7 +110,11 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			$this->register_block_element(array(
 				'id' => 'carousel-style1-item',
 				'name' => 'Style 1 Item',
-				'selector' => '.carousel-style1-item'
+				'selector' => '.carousel-style1-item',
+				'states' => array(
+					'Hover' => '.carousel-style1-item:hover', 
+					'Clicked' => '.carousel-style1-item:active'
+				)
 			));
 			$this->register_block_element(array(
 				'id' => 'carousel-style1-item-image',
@@ -181,7 +185,11 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			$this->register_block_element(array(
 				'id' => 'carousel-style2-item',
 				'name' => 'Style 2 Item',
-				'selector' => '.carousel-style2-item'
+				'selector' => '.carousel-style2-item',
+				'states' => array(
+					'Hover' => '.carousel-style2-item:hover', 
+					'Clicked' => '.carousel-style2-item:active'
+				)
 			));
 			$this->register_block_element(array(
 				'id' => 'carousel-style2-item-image',
@@ -232,7 +240,11 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			$this->register_block_element(array(
 				'id' => 'carousel-style3-item',
 				'name' => 'Style 3 Item',
-				'selector' => '.carousel-style3-item'
+				'selector' => '.carousel-style3-item',
+				'states' => array(
+					'Hover' => '.carousel-style3-item:hover', 
+					'Clicked' => '.carousel-style3-item:active'
+				)
 			));
 			$this->register_block_element(array(
 				'id' => 'carousel-style3-item-image-link',
@@ -324,7 +336,11 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			$this->register_block_element(array(
 				'id' => 'carousel-style5-item',
 				'name' => 'Style 5 Item',
-				'selector' => '.carousel-style5-item'
+				'selector' => '.carousel-style5-item',
+				'states' => array(
+					'Hover' => '.carousel-style5-item:hover', 
+					'Clicked' => '.carousel-style5-item:active'
+				)
 			));
 			$this->register_block_element(array(
 				'id' => 'carousel-style5-item-image-link',
@@ -375,7 +391,11 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			$this->register_block_element(array(
 				'id' => 'carousel-style6-item',
 				'name' => 'Style 6 Item',
-				'selector' => '.carousel-style6-item'
+				'selector' => '.carousel-style6-item',
+				'states' => array(
+					'Hover' => '.carousel-style6-item:hover', 
+					'Clicked' => '.carousel-style6-item:active'
+				)
 			));
 			$this->register_block_element(array(
 				'id' => 'carousel-style6-item-image-link',
@@ -776,7 +796,9 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 		if ( !$block )
 			$block = PadmaBlocksData::get_block($block_id);
 
-		$style 		= ( !empty($block['settings']['slider-style']) ) ? $block['settings']['slider-style']: 'style1';
+		$style 				= ( !empty($block['settings']['slider-style']) ) ? $block['settings']['slider-style']: 'style1';
+		$focus_effect 		= ( !empty($block['settings']['focus-effect']) ) ? $block['settings']['focus-effect']: 'true';
+		$focus_effect_color 	= ( !empty($block['settings']['focus-effect-color']) ) ? $block['settings']['focus-effect-color']: '#3398db';
 
 		$css = '.post_slider_'.$block['id'] . ' .tps-slider-thumb img{ 
 			width: 100%;
@@ -1003,13 +1025,19 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 						left:0;
 						width: 100%;
 						transition:all 0.3s ease-in-out 0s;
-					}
-					.post_slider_'.$block['id'].'_style3:hover:before{
-						border-top: 1px solid #3398db;
-					}
-					.post_slider_'.$block['id'].'_style3:hover{
-						border-top: 1px solid #3398db;
-					}
+					}';
+
+				if( $focus_effect == 'true' ){
+					$css .= '
+						.post_slider_'.$block['id'].'_style3:hover:before{
+							border-top: 1px solid '.$focus_effect_color.';
+						}
+						.post_slider_'.$block['id'].'_style3:hover{
+							border-top: 1px solid '.$focus_effect_color.';
+						}';
+				}
+
+				$css .= '					
 					.post_slider_'.$block['id'].'_style3 .post_slider_'.$block['id'].'_style3_img > img{
 						width: 100%;
 						height:auto;
@@ -1206,13 +1234,19 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 						left:0;
 						width: 100%;
 						transition:all 0.3s ease-in-out 0s;
-					}
-					.post_slider_'.$block['id'].'_style5:hover:before{
-						border-top: 1px solid #3398db;
-					}
-					.post_slider_'.$block['id'].'_style5:hover{
-						border-top: 1px solid #3398db;
-					}
+					}';
+
+
+				if( $focus_effect == 'true' ){
+					$css .= '
+						.post_slider_'.$block['id'].'_style5:hover:before{
+							border-top: 1px solid '.$focus_effect_color.';
+						}
+						.post_slider_'.$block['id'].'_style5:hover{
+							border-top: 1px solid '.$focus_effect_color.';
+						}';
+				}
+				$css .= '
 					.post_slider_'.$block['id'].'_style5 .post_slider_'.$block['id'].'_style5_img > img{
 						width: 100%;
 						height:auto;						
@@ -1377,13 +1411,19 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 						left:0;
 						width: 100%;
 						transition:all 0.3s ease-in-out 0s;
-					}
-					.post_slider_'.$block['id'].'_style6:hover:before{
-						border-top: 1px solid #3398db;
-					}
-					.post_slider_'.$block['id'].'_style6:hover{
-						border-top: 1px solid #3398db;
-					}
+					}';
+
+				if( $focus_effect == 'true' ){
+					$css .= '
+						.post_slider_'.$block['id'].'_style6:hover:before{
+							border-top: 1px solid '.$focus_effect_color.';
+						}
+						.post_slider_'.$block['id'].'_style6:hover{
+							border-top: 1px solid '.$focus_effect_color.';
+						}';
+				}
+				$css .= '
+					
 					.post_slider_'.$block['id'].'_style6 .post_slider_'.$block['id'].'_style6_img > img{
 						width: 100%;
 						height:auto;
