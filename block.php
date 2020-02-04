@@ -247,12 +247,12 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			$this->register_block_element(array(
 				'id' => 'carousel-style3-item-title',
 				'name' => 'Style 3 Title',
-				'selector' => '.carousel-style3-item-title'
+				'selector' => 'h5.carousel-style3-item-title'
 			));
 			$this->register_block_element(array(
 				'id' => 'carousel-style3-item-title-a',
 				'name' => 'Style 3 Title Link',
-				'selector' => '.carousel-style3-item-title a'
+				'selector' => 'h5.carousel-style3-item-title a'
 			));
 			$this->register_block_element(array(
 				'id' => 'carousel-style3-item-meta',
@@ -277,7 +277,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 			$this->register_block_element(array(
 				'id' => 'carousel-style3-item-button',
 				'name' => 'Style 3 Button',
-				'selector' => '.carousel-style3-item-button'
+				'selector' => 'a.carousel-style3-item-button'
 			));
 			$this->register_block_element(array(
 				'id' => 'carousel-style3-item-description',
@@ -618,7 +618,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				$html .='</div>';
 
 				// Title
-				$html .='<h5 class="post_slider_'.$block['id'].'_style3_title"><a href="'.esc_url(get_the_permalink( $post->ID )).'">'.esc_attr(get_the_title( $post->ID )).'</a></h5>';
+				$html .='<h5 class="post_slider_'.$block['id'].'_style3_title carousel-style3-item-title"><a href="'.esc_url(get_the_permalink( $post->ID )).'">'.esc_attr(get_the_title( $post->ID )).'</a></h5>';
 
 				$author = $this->authors[ $post->post_author ];
 				$html .= '<ul class="post_slider_'.$block['id'].'_style3_bars carousel-style3-item-meta">
@@ -752,9 +752,9 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 		if ( !$block )
 			$block = PadmaBlocksData::get_block($block_id);
 
-		$auto_play 			= ( !empty($block['settings']['auto_play']) ) ? $block['settings']['auto_play']: 'true';
-		$show_items 		= ( !empty($block['settings']['show_items']) ) ? $block['settings']['show_items']: 3;
-		$show_pagination	= ( !empty($block['settings']['show_pagination']) ) ? $block['settings']['show_pagination']: 'true';
+		$auto_play 		 = ( !empty($block['settings']['auto_play']) ) ? $block['settings']['auto_play']: 'true';
+		$show_items 	 = ( !empty($block['settings']['show_items']) ) ? $block['settings']['show_items']: 3;
+		$show_pagination = ( !empty($block['settings']['show_pagination']) ) ? $block['settings']['show_pagination']: 'true';
 
 		return 'jQuery(document).ready(function($) {
 					$("#tppost-main-slider-'.$block['id'].'").owlCarousel({
