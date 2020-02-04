@@ -235,11 +235,11 @@ class PadmaPostSliderBlockOptions extends PadmaBlockOptionsAPI {
 	}
 
 	function get_categories() {
-		
+
 		if( isset($this->block['settings']['post-type']) )
-			return PadmaQuery::get_categories($this->block['settings']['post-type']);
+			return PadmaQuery::get_categories( $this->block['settings']['post-type'] );
 		else
-			return array();	
+			return PadmaQuery::get_categories( 'post' );
 	}
 
 	function get_tags() {		
