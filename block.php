@@ -523,7 +523,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 				if ( has_post_thumbnail( $post->ID ) ) {
 
 					$html .= '<div class="tps-slider-thumb">';
-					$html .= '<a href="'.esc_url(get_the_permalink($post->ID)).'">'.get_the_post_thumbnail( $post->ID, 'post-slider-thumb', array( 'class' => "img-responsive" ) ).'</a>';
+					$html .= '<a href="'.esc_url(get_the_permalink( $post->ID )).'">'.get_the_post_thumbnail( $post->ID, 'post-slider-thumb', array( 'class' => "img-responsive" ) ).'</a>';
 					$html .= '</div>';
 
 				}
@@ -651,7 +651,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 
 				}
 
-				$html .= '<a href="'.esc_url(get_the_permalink()).'" class="post_slider_'.$block['id'].'_style3_p_readmores button carousel-style3-item-button">'.$read_more_label.'</a>';
+				$html .= '<a href="'.esc_url(get_the_permalink( $post->ID )).'" class="post_slider_'.$block['id'].'_style3_p_readmores button carousel-style3-item-button">'.$read_more_label.'</a>';
 
 				$html .= '</div>';
 				
@@ -723,7 +723,7 @@ class PadmaPostSliderBlock extends PadmaBlockAPI {
 
 				// Button
 				$html .= '<div class="tps-slider-post-link_style5">';
-				$html .= '<a href="'.esc_url(get_the_permalink()).'" class="post_slider_'.$block['id'].'_style5_p_readmores button carousel-style5-item-button">'.$read_more_label.'</a>';
+				$html .= '<a href="'.esc_url(get_the_permalink( $post->ID )).'" class="post_slider_'.$block['id'].'_style5_p_readmores button carousel-style5-item-button">'.$read_more_label.'</a>';
 				$html .= '</div>';
 
 			$html .= '</div>';
